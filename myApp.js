@@ -1,5 +1,6 @@
 let express = require('express');
 let app = express();
+require('dotenv').config();
 
 app.use('/public', express.static(__dirname + '/public'));
 
@@ -8,7 +9,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/json', function (req, res) {
-  res.json({ message: 'Hello json' });
+  res.json({ message: process.env.MESSAGE_STYLE });
 });
 
 module.exports = app;
