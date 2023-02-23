@@ -9,7 +9,8 @@ app.get('/', function (req, res) {
 });
 
 app.get('/json', function (req, res) {
-  res.json({ message: process.env.MESSAGE_STYLE });
+  var message = process.env.MESSAGE_STYLE;
+  res.json({ message });
 });
 
 module.exports = app;
