@@ -1,6 +1,9 @@
 let express = require('express');
+let bodyParser = require('body-parser');
 let app = express();
 require('dotenv').config();
+
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/public', express.static(__dirname + '/public'));
 
